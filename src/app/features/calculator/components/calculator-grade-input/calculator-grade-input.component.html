@@ -1,0 +1,11 @@
+<div class="input-group">
+  <label [for]="id()">{{ label() }}</label>
+  <input
+    type="number"
+    [id]="id()"
+    min="0"
+    [placeholder]="placeholder()"
+    [value]="value()"
+    (input)="onValueChange($event)"
+  />
+</div>
