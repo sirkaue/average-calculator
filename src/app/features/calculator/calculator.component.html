@@ -1,0 +1,25 @@
+<div class="calculator-container">
+  <h1>Calculadora de Média Escolar</h1>
+  <app-calculator-grade-input
+    label="Nota 1:"
+    placeholder="Digite a primeira nota"
+    (valueChange)="setGrade1($event)"
+  ></app-calculator-grade-input>
+
+  <app-calculator-grade-input
+    label="Nota 2:"
+    placeholder="Digite a segunda nota"
+    (valueChange)="setGrade2($event)"
+  ></app-calculator-grade-input>
+
+  <div
+    id="result"
+    class="result"
+    [class.approved]="average() !== null && average()! >= 6"
+    [class.reproved]="average() !== null && average()! < 6"
+  >
+    @if (average() !== null) { Média: {{ average() }}
+    } @else { Média: -- }
+  </div>
+  <button id="calculate" (click)="calculateAverage()">Calcular Média</button>
+</div>
